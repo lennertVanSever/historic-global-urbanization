@@ -45,7 +45,6 @@ export class UserInterface {
 
   yearInputChange({ target: { value: year } }) {
     cities.selectedYear = year;
-    this.changeLabelValue(year);
   }
 
   handleBackwardForwardButtonClick() {

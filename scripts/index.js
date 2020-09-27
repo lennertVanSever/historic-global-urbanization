@@ -30,8 +30,8 @@ class Cities {
   set selectedYear(selectedYear) {
     if (selectedYear) {
       this.pause = true;
-      this.year = selectedYear;
-      this._selectedYear = selectedYear;
+      this.year = Number(selectedYear);
+      this._selectedYear = Number(selectedYear);
     }
   }
 
@@ -68,6 +68,15 @@ class Cities {
     return this._pause;
   }
 
+  set year(year) {
+    this._year = year;
+    userInterface.changeYear(year);
+  }
+
+  get year() {
+    return this._year;
+  }
+
   getAllCitiesUntilYear(cities, givenYear) {
     const modifiedCityData = new ModifyCityData(cities, givenYear);
     globe.pointsData(modifiedCityData.data);
@@ -88,10 +97,11 @@ class Cities {
     renderer.render(scene, camera);
     requestAnimationFrame(this.animate.bind(this));
 
-    if (this.selectedYear) {
-      this.getAllCitiesUntilYear(this.threeData, this.selectedYear);
+    if (this.pause) {
+      this.getAllCitiesUntilYear(this.threeData, this.year);
     }
     if (!this.pause) {
+      if (this.selectedYear) this.selectedYear = null;
       this.delay -= 1;
       if (this.delay < 0) {
         if (this.direction === 'FORWARD' && this.year < this.maximumYear) {
@@ -100,7 +110,6 @@ class Cities {
         if (this.direction === 'BACKWARD' && this.year >= this.initialYear) {
           this.year -= this.pace;
         }
-        userInterface.changeYear(this.year);
         this.getAllCitiesUntilYear(this.threeData, this.year);
       }
     }
