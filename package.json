@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "lint": "eslint scripts/index.js"
+  },
+  "devDependencies": {
+    "@borealisgroup/eslint-config": "^1.13.6",
+    "eslint": "^7.9.0",
+    "jest": "^26.4.2"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: white;
+    }
+
+    .inputWrapper {
+      position: absolute;
+      width: 100%;
+      padding: 5px 20px;
+    }
+
+    label {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      flex-grow: 1;
+      margin-left: 10px;
+      /* width: calc(100% - 100px); */
+    }
+  </style>
+
+  <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/three/examples/js/controls/TrackballControls.js"></script>
+  <script src="//unpkg.com/three-globe"></script>
+</head>
+
+<body>
+  <section class="inputWrapper">
+    <label>
+      <span id="labelValue">-2200</span>
+      <input id="yearRange" type="range" min="-2200" max="1980" value="-2200">
+    </label>
+  </section>
+
+  <section id="globeViz"></section>
+
+  <script src="scripts/index.js" ></script>
+</body>
