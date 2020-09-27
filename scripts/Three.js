@@ -42,7 +42,8 @@ export class Camera extends THREE.PerspectiveCamera {
 export class TrackballControls extends THREE.TrackballControls {
   constructor(camera, domElement) {
     super(camera, domElement);
-    this.minDistance = 101;
+    this.minDistance = 120;
+    this.maxDistance = 1000;
     this.rotateSpeed = mapRange(window.innerWidth, 0, 2000, 0.5, 3);
     this.zoomSpeed = 0.8;
   }
