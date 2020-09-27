@@ -17,9 +17,55 @@ const userInterface = new UserInterface();
 
 class Cities {
   constructor() {
-    this.year = -2200;
+    this.initialYear = -2200;
+    this.maximumYear = 1980;
+    this.year = this.initialYear;
     this.delay = 50;
+    this.pace = 3;
     this.selectedYear = null;
+    this.direction = 'FORWARD';
+    this.pause = false;
+  }
+
+  set selectedYear(selectedYear) {
+    if (selectedYear) {
+      this.pause = true;
+      this.year = selectedYear;
+      this._selectedYear = selectedYear;
+    }
+  }
+
+  get selectedYear() {
+    return this._selectedYear;
+  }
+
+  set direction(direction) {
+    this._direction = direction;
+    if (direction === 'FORWARD') {
+      userInterface.changeTextBackwardForwardButton('Backward');
+    }
+    if (direction === 'BACKWARD') {
+      userInterface.changeTextBackwardForwardButton('Forward');
+    }
+    this.pause = false;
+  }
+
+  get direction() {
+    return this._direction;
+  }
+
+  set pause(pause) {
+    this._pause = pause;
+    if (pause) {
+      userInterface.changeTextPausePlayButton('Play');
+    }
+    if (!pause) {
+      userInterface.changeTextPausePlayButton('Pause');
+    }
+  }
+
+  get pause() {
+    return this._pause;
   }
 
   getAllCitiesUntilYear(cities, givenYear) {
@@ -44,10 +90,16 @@ class Cities {
 
     if (this.selectedYear) {
       this.getAllCitiesUntilYear(this.threeData, this.selectedYear);
-    } else {
+    }
+    if (!this.pause) {
       this.delay -= 1;
-      if (this.delay < 0 && this.year < 1980) {
-        this.year += 3;
+      if (this.delay < 0) {
+        if (this.direction === 'FORWARD' && this.year < this.maximumYear) {
+          this.year += this.pace;
+        }
+        if (this.direction === 'BACKWARD' && this.year >= this.initialYear) {
+          this.year -= this.pace;
+        }
         userInterface.changeYear(this.year);
         this.getAllCitiesUntilYear(this.threeData, this.year);
       }

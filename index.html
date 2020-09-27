@@ -4,6 +4,9 @@
 
 <head>
   <style>
+    :root {
+      --space-2: 10px;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -17,19 +20,25 @@
     .inputWrapper {
       position: absolute;
       width: 100%;
-      padding: 5px 20px;
-    }
-
-    label {
-      width: 100%;
+      padding: var(--space-2);
       display: flex;
       align-items: center;
     }
 
     input {
       flex-grow: 1;
-      margin-left: 10px;
-      /* width: calc(100% - 100px); */
+      margin-left: var(--space-2);
+    }
+
+    button {
+      margin-left: var(--space-2);
+      padding: 2px 5px;
+      background-color: white;
+      border: 1px solid white;
+    }
+    button:focus {
+      border: 1px solid blue;
+      border-radius: 0;
     }
   </style>
 
@@ -40,10 +49,10 @@
 
 <body>
   <section class="inputWrapper">
-    <label>
-      <span id="labelValue">-2200</span>
-      <input id="yearRange" type="range" min="-2200" max="1980" value="-2200">
-    </label>
+      <label id="labelValue" for="year">-2200</label>
+      <input id="yearRange" name="year" type="range" min="-2200" max="1980" value="-2200">
+      <button id="pausePlayButton">Pause</button>
+      <button id="backwardForwardButton">Backward</button>
   </section>
 
   <section id="globeViz"></section>
