@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <meta charset="utf-8">
 <meta name="description" content="How the population of the world cities evolved from 2000 BC until AD 1980">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,12 +8,14 @@
 <meta property="og:title" content="Urban Expansion Visualisation" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://awesome-montalcini-8b3817.netlify.app" />
-<meta property="og:image" content="https://github.com/lennertVanSever/historic-global-urbanization/blob/master/images/banner.jpg?raw=true">
+<meta property="og:image"
+  content="https://github.com/lennertVanSever/historic-global-urbanization/blob/master/images/banner.jpg?raw=true">
 <meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="How to global city population looks in AD 1980" />
+
 <head>
   <title>Urban Expansion Visualisation</title>
   <link rel="stylesheet" href="index.css">
@@ -24,7 +27,7 @@
 <body>
   <main>
     <header class="inputWrapper">
-      <label id="labelValue" for="year">-2200</label>
+      <label id="labelValue" for="yearRange">-2200</label>
       <input class="slider" id="yearRange" name="year" type="range" min="-2200" max="1980" value="-2200">
       <button id="pausePlayButton">Pause</button>
       <button id="backwardForwardButton">Backward</button>
@@ -43,3 +46,5 @@
   </main>
   <script src="scripts/index.js" type="module"></script>
 </body>
+
+</html>
