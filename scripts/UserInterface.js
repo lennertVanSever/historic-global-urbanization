@@ -11,8 +11,15 @@ export class UserInterface {
     this.yearRange.addEventListener('input', this.yearInputChange.bind(this));
   }
 
+  convertIntegerToLabelYears(year) {
+    if (year < 0) {
+      return `${Math.abs(year)} BC`;
+    }
+    return `AD ${year}`;
+  }
+
   changeLabelValue(newValue) {
-    this.labelValue.innerHTML = newValue;
+    this.labelValue.innerHTML = this.convertIntegerToLabelYears(newValue);
   }
 
   changeRangeValue(newValue) {
