@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="description" content="How the population of the world cities evolved from 2000 BC until AD 1980">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="keywords" content="Urban Expansion, Historic, Global, Data Visualisation, OpenGL, Three JS">
+<meta name="author" content="Lennert Van Sever">
+<meta property="og:image" content="images/banner.jpg">
 <head>
+  <title>Urban Expansion Visualisation</title>
   <link rel="stylesheet" href="index.css">
   <script src="//unpkg.com/three"></script>
   <script src="//unpkg.com/three/examples/js/controls/TrackballControls.js"></script>
@@ -10,14 +14,24 @@
 </head>
 
 <body>
-  <section class="inputWrapper">
+  <main>
+    <header class="inputWrapper">
       <label id="labelValue" for="year">-2200</label>
       <input id="yearRange" name="year" type="range" min="-2200" max="1980" value="-2200">
       <button id="pausePlayButton">Pause</button>
       <button id="backwardForwardButton">Backward</button>
-  </section>
+    </header>
 
-  <section id="globeViz"></section>
+    <section id="globeViz"></section>
 
-  <script src="scripts/index.js" type="module" ></script>
+    <footer>
+      <a href="https://github.com/lennertVanSever/historic-global-urbanization">
+        <img width="25px" height="25px" class="githubLogo" src="images/GitHub.svg" alt="Logo of GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/lennert-van-sever-72783284/">
+        © Lennert Van Sever
+      </a>
+    </footer>
+  </main>
+  <script src="scripts/index.js" type="module"></script>
 </body>
