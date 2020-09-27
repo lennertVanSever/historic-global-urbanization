@@ -15,6 +15,7 @@ export class Renderer extends THREE.WebGLRenderer {
   constructor() {
     super();
     this.setSize(window.innerWidth, window.innerHeight);
+    this.setPixelRatio(2);
     document.getElementById('globeViz').appendChild(this.domElement);
   }
 }
