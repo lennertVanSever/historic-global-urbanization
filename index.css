@@ -59,3 +59,36 @@ a {
   color: white;
   text-decoration: none;
 }
+
+
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider */
+.slider {
+  -webkit-appearance: none;
+  height: 19px;
+  background: white;
+  outline: none;
+  opacity: 0.6;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 19px;
+  background: var(--blue);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 19px;
+  background: var(--blue);
+  cursor: pointer;
+}

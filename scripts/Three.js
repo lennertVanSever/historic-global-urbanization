@@ -4,7 +4,7 @@ import { mapRange } from './utils/remapping.js';
 export class Globe extends ThreeGlobe {
   constructor() {
     super();
-    this.globeImageUrl('//unpkg.com/three-globe/example/img/earth-day.jpg')
+    this.globeImageUrl('/images/earth-day.jpg')
       .pointsData([])
       .pointAltitude('size')
       .pointColor('color')
