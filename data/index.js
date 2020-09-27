@@ -34,9 +34,9 @@ fs.createReadStream('data.csv')
       };
     });
     try {
-      const path = '../three.json';
+      const path = './data.json';
       fs.writeFileSync(path, JSON.stringify(outputThree, null, 1));
-      console.log(`succesfully generated data at ${path}`);
+      console.info(`succesfully generated data at ${path}`);
     } catch (e) {
       console.error('something went wrong writing the file', e);
     }
