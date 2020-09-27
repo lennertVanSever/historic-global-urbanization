@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+import { mapRange } from './utils/remapping.js';
 
 export class Globe extends ThreeGlobe {
   constructor() {
@@ -42,7 +43,7 @@ export class TrackballControls extends THREE.TrackballControls {
   constructor(camera, domElement) {
     super(camera, domElement);
     this.minDistance = 101;
-    this.rotateSpeed = 5;
+    this.rotateSpeed = mapRange(window.innerWidth, 0, 2000, 0.5, 3);
     this.zoomSpeed = 0.8;
   }
 }
